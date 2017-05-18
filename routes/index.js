@@ -11,4 +11,9 @@ router.get('/author', function(req, res, next) {
     res.render('author');
 });
 
+// Página de ayuda (Entrega 5.1)
+router.get('/help', function(req, res, next) {
+  res.render('ayuda');
+});
+
 module.exports = router;
