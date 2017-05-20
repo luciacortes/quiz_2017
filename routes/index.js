@@ -13,10 +13,13 @@ router.get('/author', function(req, res, next) {
     res.render('author');
 });
 
+// Página de ayuda (Entrega 5.1)
+router.get('/help', function(req, res, next) {
+  res.render('ayuda');
+});
 
 // Autoload de rutas que usen :quizId
 router.param('quizId', quizController.load);
-
 
 // Definición de rutas de /quizzes
 router.get('/quizzes',                     quizController.index);
@@ -29,6 +32,7 @@ router.delete('/quizzes/:quizId(\\d+)',    quizController.destroy);
 
 router.get('/quizzes/:quizId(\\d+)/play',  quizController.play);
 router.get('/quizzes/:quizId(\\d+)/check', quizController.check);
-
+router.get('/quizzes/randomplay',          quizController.random);
+router.get('/quizzes/randomcheck/:quizId(\\d+)', quizController.randomCheck);
 
 module.exports = router;
