@@ -120,8 +120,10 @@ router.get('/quizzes/:quizId(\\d+)/check',
     quizController.check);
 
 // Entrega 5.2
-router.get('/quizzes/randomplay',          quizController.random);
-router.get('/quizzes/randomcheck/:quizId(\\d+)', quizController.randomCheck);
+router.get('/quizzes/randomplay',
+    quizController.random);
+router.get('/quizzes/randomcheck/:quizId(\\d+)',
+    quizController.randomCheck);
 
 
 router.get('/quizzes/:quizId(\\d+)/tips/new',
