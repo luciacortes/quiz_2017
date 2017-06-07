@@ -44,7 +44,7 @@ exports.create = function (req, res, next) {
             AuthorId: req.session.user.id
         });
 
-    tip.save()
+    tip.save({fields: ["text", "QuizId", "AuthorId"]})
     .then(function (tip) {
         req.flash('success', 'Pista creado con éxito.');
 
